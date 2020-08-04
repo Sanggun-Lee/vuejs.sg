@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Vue Component Registration</title>
+    </head>
+    <body>
+        <div id="app">
+            <button>컴포넌트 등록. 아무일도 일어나지 않았다.</button>
+            <h1>첫번째 인스턴스 영역</h1>
+            <my-component></my-component>
+            <my-local-component></my-local-component>
+            {{ message }}
+        </div>
+        <hr>
+        <div id="app2">
+            {{ message }}
+            <h2>두번째 인스턴스 영역</h2>
+            <my-component></my-component>
+            <my-local-component></my-local-component>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            Vue.component('my-component', {
+                template: `
+                <div>
+                    <div>전역 컴포넌트입니다.sg<br> 안녕 반가워 Vue </div> 
+                    <button @click="clicked">전역컴포넌트에 있어서 두개가 생깁니다. 눌러보세요</button>
+                </div>
+                `,
+                methods: {
+                    clicked: function() {
+                        console.log('찍었습니다') 
+                    }
+                }
+            });
+            
+            var cmp1 = {
+                template: `
+                    <div>
+                        <p> 첫번째 지역<br>
+                        컴포넌트<br>
+                        입니다.
+                        </p>
+                    </div>
+                `
+            }
+
+            new Vue({
+                el: '#app',
+                data: {
+                    message: '새로운 메시지'
+                },
+                created(){
+                    console.log(this.message)
+                },
+                components: {
+                    'my-local-component': cmp1
+                }
+            });
+            
+            var cmp2 = {
+                template: `
+                    <div>
+                        <p>두번째 지역<br>
+                        컴포넌트<br>
+                        입니다.
+                        </p>
+                    </div>
+                `
+            }
+
+            new Vue({
+                el: '#app2',
+                data: {
+                    message: 'this is from sg'
+                },
+                components: {
+                    'my-local-component': cmp2
+                }
+            });
+        </script>
+    </body>
+</html>

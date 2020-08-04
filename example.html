@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>vue el example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+  <ul class="foo">
+    <li class="bar" v-bind:style="style" >This is red text {{ mess }}</li>
+    <li>This is not red or blue</li>
+    <li class="bar" v-bind:style="style">This text is blue {{ mess }}</li>
+  </ul>
+  <script>
+  
+  // mounts to the first element with 'bar' class
+  new Vue({
+    el:'.bar',
+    data: {
+      style: 'color:red;',
+      mess: 'bar'
+    }
+  });
+  
+  // mounts to the first element with 'foo' class
+  new Vue({
+    el:'.foo',
+    data: {
+      style: 'color:blue;',
+      mess: 'foo'
+    }
+  });
+  
+  </script>
+  </body>
+</html>
