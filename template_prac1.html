@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <!--한국어encoding해결-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>template binding practice</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <p v-bind:id="idA">아이디 바인딩</p>
+            <p v-bind:class="classA">클래스 바인딩</p>
+            <p v-bind:style="styleA">스타일 바인딩</p>
+        </div>
+
+        <div id="app2">
+            <p>{{message}}</p>
+            <p>{{message + "!!!"}}</p>
+            <p>{{message.split('').reverse().join('')}}</p>     <!--html단에서도 뒤집는 코드 적어둘 수 있음.-->
+            <p>{{reversedMessage}}</p>     <!--reversedMessage는 script단에서 이미 연산되어있음-->
+            <button v-on:click="reverseMsg">위에 네 줄 문자열 역순 버튼</button> <!--메소드로 직접 문자열 뒤집는 것임-->
+            <p>{{!true ? 100 : 0 + "그냥 삼항연산자로 표시하였고, !true 상태임"}}</p>
+            <h5 v-bind:id="uid">아랫 것과 무슨 차이? 지금은 v-bind:id="uid"라고 쓴거임</h5>
+            <h5>위에 것과 무슨 차이? 지금은 아무 태그도 없음</h5>
+        </div>
+
+        <div id="app3">
+            <a v-if="flag">v-if는 false일 때, 코드를 삭제한대요. 지금은 true임</a>
+            <ul>
+                <li v-for="system in systems">{{system}}</li>
+            </ul>
+            <p v-show="flag2">v-show는 false일 때, 화면에서만 사라진대요. 지금은 true임</p>
+            <button v-on:click="popupAlert">경고창 버튼이지요</button>
+        </div>
+
+        <div id="app4">
+            <input v-model="message">
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>      <!--Vue CDN-->
+        <script src="template_vue_source.js"></script>     <!--스크립트단을 다른 자바스크립트 파일로 생성-->
+    </body>
+</html>
