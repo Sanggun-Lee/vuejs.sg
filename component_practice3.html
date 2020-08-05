@@ -16,7 +16,15 @@
         <script>
         Vue.component('child-component', {
             props: ['propsdata'],
-            template: '<p>{{ propsdata }}</p>'
+            template: '<p>{{ propsdata }}</p>',
+            methods:{
+                addValue: function() {
+                    this.
+                },
+                addValue2(){
+                    this.
+                }
+            }
         });
         Vue.component('sibling-component', {
             props: ['propsdata2'],
