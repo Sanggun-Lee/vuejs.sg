@@ -3,6 +3,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <!--한국어encoding해결-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">      <!--jQuery UI CSS CDN-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">     <!--Bootstrap CSS CDN-->
     </head>
 
     <body>
@@ -11,7 +13,13 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>      <!--Vue CDN-->
         <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>     <!--Router CDN-->
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>     <!--Axios CDN-->
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>     <!--jQuery CDN-->
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>     <!--jQuery UI CDN-->        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>     <!--Bootstrap javascript CDN 아래 세 줄까지-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>     <!--highcharts CDN-->
+        <script src="/dist/build.js"></script>     <!--Vue Project 실행할 때, index.html에서 해당 스트립트의 위치-->
         <script></script>
     </body>
 </html>
